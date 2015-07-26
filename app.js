@@ -4,13 +4,10 @@ var app = express();
 app.set('views', './views');
 app.set('view engine', 'ejs');
 
+app.use(express.static('public'));
+
 app.get('/', function (req, res) {
-    res.render('index', { title: });
+    res.render('index', { message: '/forzafontela' });
 });
 
-var server = app.listen(80, function () {
-    var host = server.address().address;
-    var port = server.address().port;
-
-    console.log('App listening at http://%s:%s', host, port);
-});
+var server = app.listen(80, function () {});
